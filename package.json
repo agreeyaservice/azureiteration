@@ -1,0 +1,23 @@
+{
+  "name": "analytics-example-widget",
+  "version": "1.0.0",
+  "description": "Widget extension using VSTS Analytics and Charts with React and Typescript",
+  "repository": "https://github.com/Microsoft/vsts-extension-samples",
+  "license": "MIT",
+  "dependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.1",
+    "typescript": "^2.6.1",
+    "vss-web-extension-sdk": "^4.125.2",
+    "webpack": "^4.46.0"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "postbuild": "npm run gallery-publish",
+    "package": "tfx extension create",
+    "gallery-publish": "tfx extension publish --rev-version --token ykamp5w4ycvaw34mtgqulhlb2kg6kynzpo6bo63dtztkp72hcf5a",
+    "clean": "rimraf ./dist && rimraf ./*.vsix",
+    "start:dev": "webpack-dev-server --mode development"
+  }
+}
